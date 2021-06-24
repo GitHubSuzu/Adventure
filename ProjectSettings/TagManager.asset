@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Gomi
+  - Left_Teleport
+  - Right_Teleport
+  - Up_Ivent
+  - Signboard
+  - Front_Ivent
+  - Front_Action
+  - Up_Front
+  - Elevator_Up
+  - Up_C-Room_L
+  - Up_Room
+  - Down_Room
+  - Down_Room2
+  - Down_C-Room_R
+  - Up_Science_Room
+  - Down_Stuff_Room
+  - Up_Infirmary_Room
+  - Up_C_Room
+  - Down_C_Room
+  - Right_Teleport2
+  - Left_Teleport2
+  - Down_Front
+  - Down_Elevator
+  - DownDoor
+  - UpDoor
+  - Left_Toilet
+  - Right_Toilet
+  - Main_Gate
+  - Escape
+  - First_Ivent
+  - Ivent_4
+  - Ivent_5
+  - Ivent_6
+  - Ivent_9
+  - Ivent_7
+  - Bed
+  - Book
+  - Blackboard
+  - Cardboard
+  - Watercrew
+  - Window
+  - Kaban
+  - Bookshelf
+  - Case
+  - Desk
+  - Chair
+  - Kamikuzu_1
+  - Stove
+  - Test
+  - Model_2
+  - Mirror_1
+  - Paper
+  - Report
+  - Kamikuzu_2
+  - Umbrellastand
+  - Bottle
+  - Mirror_2
+  - Materialshelf
+  - Model_1
+  - Locker
+  - Mop
+  - Bucket_1
+  - Bucket_2
+  - Getabako
+  - TileB
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
