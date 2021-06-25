@@ -7,7 +7,7 @@ public class WindowText : MonoBehaviour
 {
     //Windowのテキストを表示するCanvas
     [SerializeField]
-    private GameObject canvas;
+    private GameObject canvas_window;
     //　正門(Gate)を宣言
     public static GameObject gate;
     //　読み込んだテキストを出力するUIテキスト
@@ -29,8 +29,8 @@ public class WindowText : MonoBehaviour
     public static bool isImage;
 
 
-    private GameObject canvas_pass;
-    private GameObject canvas_flick;
+    [SerializeField] private GameObject canvas_pass;
+    [SerializeField] private GameObject canvas_flick;
     /// <summary>
     /// 特殊コード------------------------
     /// </summary>
@@ -58,12 +58,9 @@ public class WindowText : MonoBehaviour
 
     void Start()
     {
-        canvas_pass = GameObject.Find("Canvas_Pass");
         canvas_pass.SetActive(false);
-        canvas_flick = GameObject.Find("Canvas_Flick");
         canvas_flick.SetActive(false);
-        canvas = GameObject.Find("Canvas_Window");
-        canvas.SetActive(false);
+        canvas_window.SetActive(false);
         gate = GameObject.Find("Gate");
         gate.SetActive(false);
         textNum1 = 0;
@@ -73,7 +70,7 @@ public class WindowText : MonoBehaviour
     {
         if (isImage == true)
         {
-            canvas.SetActive(true);
+            canvas_window.SetActive(true);
             if (Input.GetButtonDown("Fire1"))
             {
                 if (textNum1 < splitText1.Length)
@@ -126,7 +123,7 @@ public class WindowText : MonoBehaviour
                 else
                 {
                     isImage = false;
-                    canvas.SetActive(false);
+                    canvas_window.SetActive(false);
                     PlayerController.isMove = true;
                     //PlayerController.isMove_Item = true;
                     PlayerController.speed = 4;

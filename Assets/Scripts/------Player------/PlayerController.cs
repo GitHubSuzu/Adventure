@@ -9,9 +9,9 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     //歩行SE
-    AudioSource WalkSound;
+    public static AudioSource WalkSound;
     //アニメーション宣言
-    private Animator anim;
+    public static Animator anim;
     //Rigidbody宣言
     public static Rigidbody2D rb;
     //Playerの歩く速度
@@ -60,17 +60,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-void Update()
+    void Update()
     {
+        Debug.Log(speed);
 
-        if(Count == 2)
+        if (Count == 2)
         {
             ivent = 7;
         }
-        
+
         //*以後要修正*
         //Playerの動きが非アクティブの時上方向に進む
-        if (isMove == false)
+        if (!isMove)
         {
             ySpeed = speed * 0.5f;
             rb.velocity = new Vector2(0, ySpeed);
@@ -92,61 +93,61 @@ void Update()
         //Playerのx,yの値を宣言し初期化
         float ySpeed = 0.0f;
         float xSpeed = 0.0f;
-    
-            //上下移動---------------
-            if (Input.GetKey(KeyCode.S))//下
-            {
-           　 //Animation切り替え
-         　    anim.SetBool("down", true); //下へ歩く Animation
-           　  anim.SetBool("down_stand", false); //下向きに立ち止まる　Animation
-          　   anim.SetBool("run", false);
-                ySpeed = -speed;//ｙの値からspeedの速さ-する
-                WalkSound.UnPause();//歩行SE
-            }
-            else if (Input.GetKey(KeyCode.W))//上
-            {
-                //Animation切り替え
-                anim.SetBool("up", true);  //上へ歩く Animation
-                anim.SetBool("up_stand", false);//上向きに立ち止まる　Animation
-                anim.SetBool("run", false); 
-                ySpeed = speed;//yの値からspeedの速さ+する
-                WalkSound.UnPause();
-            }
-            //左右移動--------------
-            else if (Input.GetKey(KeyCode.D))// 右
-            {
-                transform.localScale = new Vector3(-1, 1, 1);
-                anim.SetBool("run", true);//左右に歩く Animation
-         　    anim.SetBool("left_stand", false);//左右に立ち止まる　Animation
-                anim.SetBool("up", false);
-                anim.SetBool("down", false);
-                xSpeed = speed;//xの値からspeedの速さ+する
-                WalkSound.UnPause();
-            }
-            else if (Input.GetKey(KeyCode.A))//左
-            {
-                transform.localScale = new Vector3(1, 1, 1);
-                anim.SetBool("run", true);
-                anim.SetBool("left_stand", false);//左右に立ち止まる　Animation
-            　 anim.SetBool("up", false);
-                anim.SetBool("down", false);
-                xSpeed = -speed;//xの値からspeedの速さ-する
-                WalkSound.UnPause();
-            }
-            else
-            {
-                anim.SetBool("down_stand", true);
-                anim.SetBool("up_stand", true);
-                anim.SetBool("up", false);
-                anim.SetBool("down", false);
-                anim.SetBool("run", false);
-                anim.SetBool("left_stand", true);
-                ySpeed = 0.0f;
-                xSpeed = 0.0f;
-                WalkSound.Pause();
-            }
-            rb.velocity = new Vector2(xSpeed, ySpeed);
-        
+
+        //上下移動---------------
+        if (Input.GetKey(KeyCode.S))//下
+        {
+            //Animation切り替え
+            anim.SetBool("down", true); //下へ歩く Animation
+            anim.SetBool("down_stand", false); //下向きに立ち止まる　Animation
+            anim.SetBool("run", false);
+            ySpeed = -speed;//ｙの値からspeedの速さ-する
+            WalkSound.UnPause();//歩行SE
+        }
+        else if (Input.GetKey(KeyCode.W))//上
+        {
+            //Animation切り替え
+            anim.SetBool("up", true);  //上へ歩く Animation
+            anim.SetBool("up_stand", false);//上向きに立ち止まる　Animation
+            anim.SetBool("run", false);
+            ySpeed = speed;//yの値からspeedの速さ+する
+            WalkSound.UnPause();
+        }
+        //左右移動--------------
+        else if (Input.GetKey(KeyCode.D))// 右
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            anim.SetBool("run", true);//左右に歩く Animation
+            anim.SetBool("left_stand", false);//左右に立ち止まる　Animation
+            anim.SetBool("up", false);
+            anim.SetBool("down", false);
+            xSpeed = speed;//xの値からspeedの速さ+する
+            WalkSound.UnPause();
+        }
+        else if (Input.GetKey(KeyCode.A))//左
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            anim.SetBool("run", true);
+            anim.SetBool("left_stand", false);//左右に立ち止まる　Animation
+            anim.SetBool("up", false);
+            anim.SetBool("down", false);
+            xSpeed = -speed;//xの値からspeedの速さ-する
+            WalkSound.UnPause();
+        }
+        else
+        {
+            anim.SetBool("down_stand", true);
+            anim.SetBool("up_stand", true);
+            anim.SetBool("up", false);
+            anim.SetBool("down", false);
+            anim.SetBool("run", false);
+            anim.SetBool("left_stand", true);
+            ySpeed = 0.0f;
+            xSpeed = 0.0f;
+            WalkSound.Pause();
+        }
+        rb.velocity = new Vector2(xSpeed, ySpeed);
+
     }
 
     /// <summary>
@@ -263,9 +264,8 @@ void Update()
         switch (collision.gameObject.tag)
         {
             case "First_Ivent":
-                if(ivent == 0)
+                if (ivent == 0)
                 {
-                    speed = 0;
                     collision.gameObject.GetComponent<ItemManager>().FristIvent();
                     audioSource1.PlayOneShot(bgm1);
                 }
@@ -273,7 +273,6 @@ void Update()
             case "Front_Ivent":
                 if (ivent == 1)
                 {
-                    speed = 0;
                     collision.gameObject.GetComponent<ItemManager>().FrontIvent();
                 }
                 break;
@@ -281,42 +280,36 @@ void Update()
                 if (ivent == 2)
                 {
                     collision.gameObject.GetComponent<ItemManager>().FrontAction();
-                    speed = 0;
                 }
                 break;
             case "Ivent_4":
-                if(ivent == 4)
+                if (ivent == 4)
                 {
                     collision.gameObject.GetComponent<ItemManager>().Ivent4();
-                    speed = 0;
                 }
                 break;
             case "Ivent_5":
                 if (ivent == 5)
                 {
                     collision.gameObject.GetComponent<ItemManager>().Ivent5();
-                    speed = 0;
                 }
                 break;
             case "Ivent_6":
                 if (ivent == 6)
                 {
                     collision.gameObject.GetComponent<ItemManager>().Ivent6();
-                    speed = 0;
                 }
                 break;
             case "Ivent_7":
                 if (ivent == 7)
                 {
                     collision.gameObject.GetComponent<ItemManager>().Ivent7();
-                    speed = 0;
                 }
                 break;
             case "Ivent_9":
                 if (ivent == 9)
                 {
                     collision.gameObject.GetComponent<ItemManager>().Ivent9();
-                    speed = 0;
                 }
                 break;
         }
@@ -373,10 +366,10 @@ void Update()
                 GameObject.Find("SceneManager").GetComponent<CameraScript>().Corridor_Down(No);
                 break;
             case "Up_Infirmary_Room":
-                    Change = 1;
-                    No = 3;
-                    collision.gameObject.GetComponent<ChaseScript>().Teleport_up();
-                    GameObject.Find("SceneManager").GetComponent<CameraScript>().Corridor_Up(No);
+                Change = 1;
+                No = 3;
+                collision.gameObject.GetComponent<ChaseScript>().Teleport_up();
+                GameObject.Find("SceneManager").GetComponent<CameraScript>().Corridor_Up(No);
                 break;
             case "Up_C_Room":
                 Change = 1;
@@ -424,11 +417,12 @@ void Update()
                 {
                     collision.gameObject.GetComponent<ChaseScript>().Teleport_up();
                     GameObject.Find("SceneManager").GetComponent<CameraScript>().Front_up();
-                }else
+                }
+                else
                 {
                     collision.gameObject.GetComponent<ItemManager>().Door();
                 }
-                    break;
+                break;
             case "Down_Elevator":
                 collision.gameObject.GetComponent<ChaseScript>().Teleport_down();
                 GameObject.Find("SceneManager").GetComponent<CameraScript>().Front_up();
@@ -453,7 +447,7 @@ void Update()
                     collision.gameObject.GetComponent<ItemManager>().MainGate();
                     speed = 0;
                 }
-                else if(ivent == 8 || ivent == 10)
+                else if (ivent == 8 || ivent == 10)
                 {
                     EscapeManager.passwordCanvas.SetActive(true);
                 }

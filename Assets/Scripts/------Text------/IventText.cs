@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -33,30 +32,30 @@ public class IventText : MonoBehaviour
     /// NameText----------------
     /// </summary>
     //　読み込んだテキストを出力するUIテキスト
-    private GameObject nameText_w;
-    private GameObject nameText_m;
-    private GameObject nameText_s;
+    [SerializeField] private GameObject nameText_w;
+    [SerializeField] private GameObject nameText_m;
+    [SerializeField] private GameObject nameText_s;
 
     /// <summary>
     /// 画像-------------------
     /// </summary>
     //画像のアクティブ取得用
-    private GameObject image_women;
-    private GameObject image_men;
-    private GameObject image_girl;
-    private GameObject girl;
+    [SerializeField] private GameObject image_women;
+    [SerializeField] private GameObject image_men;
+    [SerializeField] private GameObject image_girl;
+    [SerializeField] private GameObject girl;
     //Image取得(spriteを変更)
-    public Image women;
-    public Image men;
+    [SerializeField] private Image women;
+    [SerializeField] private Image men;
     //画像のSpriteを格納する配列
     Sprite[] WomenImage;
     Sprite[] MenImage;
 
-    public static GameObject messageText;　
+    public static GameObject messageText;
 
-    private GameObject textbox;
-    private GameObject pagebleak;
-    private GameObject player;
+    [SerializeField] private GameObject textbox;
+    [SerializeField] private GameObject pagebleak;
+    [SerializeField] private GameObject player;
 
     /// <summary>
     /// 特殊コード------------------------
@@ -96,7 +95,7 @@ public class IventText : MonoBehaviour
     public static bool Ivent_Image;
 
     public static GameObject gateWall;
-    private GameObject r_button;
+    [SerializeField] private GameObject r_button;
 
 
     void Start()
@@ -105,21 +104,14 @@ public class IventText : MonoBehaviour
         messageText = GameObject.Find("MessageText");
         messageText.GetComponent<Text>().text = "";
 
-        r_button = GameObject.Find("R_Button");
         r_button.SetActive(false);
-
-        player = GameObject.Find("Player");
-
-        image_girl = GameObject.Find("Image_Girl");
-        girl = GameObject.Find("Girl");
         image_girl.SetActive(false);
         girl.SetActive(false);
+
         //Resourcesフォルダにある種類別に分けられたフォルダにあるすべて画像を配列に格納
         WomenImage = Resources.LoadAll<Sprite>("Image/Women/");
         MenImage = Resources.LoadAll<Sprite>("Image/Men/");
 
-        //テキストを表示するBoxのImageを取得
-        textbox = GameObject.Find("TextBox");
         //非アクティブ
         textbox.SetActive(false);
 
@@ -129,26 +121,18 @@ public class IventText : MonoBehaviour
         gateWall = GameObject.Find("GateWall");
         gateWall.SetActive(false);
 
-        //名前を表示するUIテキストを取得して、非アクティブ
         //男性の名前
-        nameText_m = GameObject.Find("NameText_M");
         nameText_m.SetActive(false);
         //女性の名前
-        nameText_w = GameObject.Find("NameText_W");
         nameText_w.SetActive(false);
         //少女
-        nameText_s = GameObject.Find("NameText_S");
         nameText_s.SetActive(false);
 
-        //画像を取得して非アクティブ
         //女性の画像
-        image_women = GameObject.Find("Image_Women");
         image_women.SetActive(false);
         //男性の画像
-        image_men = GameObject.Find("Image_Men");
         image_men.SetActive(false);
         //ページ送りPrefab
-        pagebleak = GameObject.Find("PageBleak");
         pagebleak.SetActive(false);
     }
 
@@ -211,7 +195,7 @@ public class IventText : MonoBehaviour
                             gateWall.SetActive(true);
                             break;
                         case "@3B":
-                           messageText.GetComponent<Text>().text = "先に進もう。";
+                            messageText.GetComponent<Text>().text = "先に進もう。";
                             break;
                         case "@3C":
                             image_girl.SetActive(true);

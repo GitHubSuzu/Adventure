@@ -20,9 +20,9 @@ public class ItemManager : MonoBehaviour
 
     public void Getabako()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -35,9 +35,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Bookshelf()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -50,9 +50,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Blackboard()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -65,9 +65,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Book()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -80,9 +80,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Cardboard()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -95,9 +95,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Desk()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -110,9 +110,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Case()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -125,9 +125,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Watercrew()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -140,9 +140,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Window()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -155,9 +155,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Kaban()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -170,9 +170,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Chair()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -185,9 +185,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Kamikuzu_1()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -200,9 +200,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Kamikuzu_2()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -215,9 +215,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Stove()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -230,9 +230,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Bottle()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -245,9 +245,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Test()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -260,9 +260,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Umbrellastand()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -275,9 +275,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Paper()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -290,9 +290,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Report()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -305,9 +305,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Bucket_1()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -320,9 +320,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Bucket_2()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -335,9 +335,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Locker()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -350,9 +350,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Mop()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -365,9 +365,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Materialshelf()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -380,9 +380,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Model_1()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -395,9 +395,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Model_2()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -410,9 +410,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Mirror_1()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -425,9 +425,9 @@ public class ItemManager : MonoBehaviour
     }
     public void Mirror_2()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -443,9 +443,9 @@ public class ItemManager : MonoBehaviour
 
     public void Bed()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -460,9 +460,9 @@ public class ItemManager : MonoBehaviour
     public void GomiBako()
     {
         //Enterキーが押されたら
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
-            Release();
+            Freeze();
             //WindowTextのCanvasをアクティブ
             WindowText.isImage = true;
             //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -477,7 +477,7 @@ public class ItemManager : MonoBehaviour
     public void Signboard()
     {
         //Enterキーが押されたら
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
             //Playerの動きを非アクティブ
             Freeze();
@@ -494,7 +494,7 @@ public class ItemManager : MonoBehaviour
 
     public void Door()
     {
-        Release();
+        Freeze();
         //WindowTextのCanvasをアクティブ
         WindowText.isImage = true;
         //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -508,7 +508,7 @@ public class ItemManager : MonoBehaviour
     public void FristIvent()
     {
         PlayerController.ivent = 1;
-        Release();
+        Freeze();
         //IventTextのCanvasをアクティブ
         IventText.Ivent_Image = true;
         //ResourcesフォルダにあるMessageTextというテキストファイルを読み込む
@@ -522,13 +522,13 @@ public class ItemManager : MonoBehaviour
     public void FrontIvent()
     {
         PlayerController.ivent = 2;
-        Release();
+        Freeze();
         //IventTextのCanvasをアクティブ
         IventText.Ivent_Image = true;
         //ResourcesフォルダにあるMessageTextというテキストファイルを読み込む
-        IventText.textAsset = Resources.Load("Front_M") as TextAsset; 
+        IventText.textAsset = Resources.Load("Front_M") as TextAsset;
         //読み込んだテキストデータを代入
-        IventText.loadText1 = IventText.textAsset.text;  
+        IventText.loadText1 = IventText.textAsset.text;
         //代入されたテキストデータを改行で分割して配列に入れる
         IventText.splitText1 = IventText.loadText1.Split(char.Parse("\n"));
     }
@@ -536,7 +536,7 @@ public class ItemManager : MonoBehaviour
     public void FrontAction()
     {
         PlayerController.ivent = 3;
-        Release();
+        Freeze();
         //Gate(Object)をアクティブ
         WindowText.gate.SetActive(true);
         //WindowTextのCanvasをアクティブ
@@ -552,7 +552,7 @@ public class ItemManager : MonoBehaviour
     public void MainGate()
     {
         PlayerController.ivent = 4;
-        Release();
+        Freeze();
         //IventTextのCanvasをアクティブ
         IventText.Ivent_Image = true;
         //ResourcesフォルダにあるMessageTextというテキストファイルを読み込む
@@ -563,10 +563,10 @@ public class ItemManager : MonoBehaviour
         IventText.splitText1 = IventText.loadText1.Split(char.Parse("\n"));
     }
 
-    public void  Ivent4()
+    public void Ivent4()
     {
         PlayerController.ivent = 5;
-        Release();
+        Freeze();
         //WindowTextのCanvasをアクティブ
         WindowText.isImage = true;
         //ResourcesフォルダにあるSignTextというテキストファイルを読み込む
@@ -577,10 +577,10 @@ public class ItemManager : MonoBehaviour
         WindowText.splitText1 = WindowText.loadText1.Split(char.Parse("\n"));
     }
 
-   public void Ivent5()
+    public void Ivent5()
     {
         PlayerController.ivent = 6;
-        Release();
+        Freeze();
         //IventTextのCanvasをアクティブ
         IventText.Ivent_Image = true;
         //ResourcesフォルダにあるMessageTextというテキストファイルを読み込む
@@ -594,7 +594,7 @@ public class ItemManager : MonoBehaviour
     public void Ivent6()
     {
         PlayerController.ivent = 7;
-        Release();
+        Freeze();
         //IventTextのCanvasをアクティブ
         IventText.Ivent_Image = true;
         //ResourcesフォルダにあるMessageTextというテキストファイルを読み込む
@@ -609,7 +609,7 @@ public class ItemManager : MonoBehaviour
     {
         PlayerController.ivent = 8;
         PlayerController.Count = 3;
-        Release();
+        Freeze();
         //IventTextのCanvasをアクティブ
         IventText.Ivent_Image = true;
         //ResourcesフォルダにあるMessageTextというテキストファイルを読み込む
@@ -623,7 +623,7 @@ public class ItemManager : MonoBehaviour
     public void Ivent9()
     {
         PlayerController.ivent = 10;
-        Release();
+        Freeze();
         //IventTextのCanvasをアクティブ
         IventText.Ivent_Image = true;
         //ResourcesフォルダにあるMessageTextというテキストファイルを読み込む
@@ -640,10 +640,18 @@ public class ItemManager : MonoBehaviour
     public void Freeze()
     {
         PlayerController.isMove = false;
+        PlayerController.WalkSound.Pause();
+        PlayerController.speed = 0;
+        PlayerController.anim.SetBool("down_stand", true);
+        PlayerController.anim.SetBool("up_stand", true);
+        PlayerController.anim.SetBool("up", false);
+        PlayerController.anim.SetBool("down", false);
+        PlayerController.anim.SetBool("run", false);
+        PlayerController.anim.SetBool("left_stand", true);
     }
     //静止
     public void Release()
-    { 
+    {
         PlayerController.isMove = true;
     }
 }
