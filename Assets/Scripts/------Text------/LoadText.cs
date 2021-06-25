@@ -117,6 +117,7 @@ public class LoadText : MonoBehaviour
 
     int menu_count = 0;//menuを開くカウンター
     int auto_count = 0;//Autoを押すカウンター
+    int log_count = 0;//Logを押すカウンター
 
     void Start()
     {
@@ -447,6 +448,20 @@ public class LoadText : MonoBehaviour
     public void Skip()
     {
         textNumber = splitText1.Length - 2;
+    }
+
+    //ログボタン
+    public void Log()
+    {
+        log_count++;
+        if (auto_count % 2 == 0)
+        {
+            auto_chk = false;
+        }
+        else
+        {
+            auto_chk = true;
+        }
     }
 
     //オートボタン
