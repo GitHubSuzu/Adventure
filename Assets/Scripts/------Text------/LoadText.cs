@@ -31,8 +31,8 @@ public class LoadText : MonoBehaviour
     /// NameText----------------
     /// </summary>
     //　読み込んだテキストを出力するUIテキスト
-    private GameObject nameText_w;
-    private GameObject nameText_m;
+    [SerializeField] private GameObject nameText_w;
+    [SerializeField] private GameObject nameText_m;
 
     /// <summary>
     /// 特殊コード------------------------
@@ -53,12 +53,12 @@ public class LoadText : MonoBehaviour
     /// 画像-----------------------
     /// </summary>
     //画像のアクティブ取得用
-    private GameObject image_women;
-    private GameObject image_men;
+    [SerializeField] private GameObject image_women;
+    [SerializeField] private GameObject image_men;
     //Image取得(spriteを変更)
-    public Image women;
-    public Image men;
-    public Image backimage;
+    [SerializeField] private Image women;
+    [SerializeField] private Image men;
+    [SerializeField] private Image backimage;
 
     //画像のSpriteを格納する配列
     Sprite[] BackImage;//背景
@@ -66,12 +66,12 @@ public class LoadText : MonoBehaviour
     Sprite[] MenImage;//男性の画像
 
     //メニュー
-    private GameObject menu;
+    [SerializeField] private GameObject menu;
     public Slider bgm_Slider;//bgm音量調整
     public Slider se_Slider;//se音量調整
     public Slider speed_Slider;//会話速度調整
 
-    private GameObject pagebleak;//クリックアイコン
+    [SerializeField] private GameObject pagebleak;//クリックアイコン
 
     /// <summary>
     /// Sound---------------------
@@ -119,6 +119,11 @@ public class LoadText : MonoBehaviour
     int auto_count = 0;//Autoを押すカウンター
     int log_count = 0;//Logを押すカウンター
 
+    [SerializeField]
+    private GameObject log_canvas;
+    [SerializeField]
+    private ScrollRect backLog;
+
     void Start()
     {
         //Resourcesフォルダにある種類別に分けられたフォルダにあるすべて画像を配列に格納
@@ -145,28 +150,24 @@ public class LoadText : MonoBehaviour
 
         //名前を表示するUIテキストを取得して、非アクティブ
         //男性の名前
-        nameText_m = GameObject.Find("NameText_M");
         nameText_m.SetActive(false);
         //女性の名前
-        nameText_w = GameObject.Find("NameText_W");
         nameText_w.SetActive(false);
 
         //画像を取得して非アクティブ
         //女性の画像
-        image_women = GameObject.Find("Image_Women");
         image_women.SetActive(false);
         //男性の画像
-        image_men = GameObject.Find("Image_Men");
         image_men.SetActive(false);
 
         //メニュー
-        menu = GameObject.Find("Menu");
         menu.SetActive(false);
 
         //PageBleak
-        pagebleak = GameObject.Find("PageBleak");
         pagebleak.SetActive(false);
 
+        //Log
+        log_canvas.SetActive(false);
     }
 
     void Update()
@@ -228,6 +229,7 @@ public class LoadText : MonoBehaviour
                         displayText = "";
                         textCharNumber = 0;//文字数リセット
                         textNumber = textNumber + 1;//次の行へ
+                        backLog.content.GetComponentInChildren<Text>().text += splitText2[textNumber];
                     }
                     else if (auto_chk)//Auto会話
                     {
@@ -454,13 +456,15 @@ public class LoadText : MonoBehaviour
     public void Log()
     {
         log_count++;
-        if (auto_count % 2 == 0)
+        if (log_count % 2 == 0)
         {
-            auto_chk = false;
+            log_canvas.SetActive(false);
+            story_chk = true;
         }
         else
         {
-            auto_chk = true;
+            log_canvas.SetActive(true);
+            story_chk = false;
         }
     }
 
