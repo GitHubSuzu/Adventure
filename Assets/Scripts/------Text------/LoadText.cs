@@ -124,6 +124,9 @@ public class LoadText : MonoBehaviour
     [SerializeField]
     private ScrollRect backLog;
 
+    private string m_name = "坂本　：　";
+    private string w_name = "西園寺　：　";
+
     void Start()
     {
         //Resourcesフォルダにある種類別に分けられたフォルダにあるすべて画像を配列に格納
@@ -181,16 +184,7 @@ public class LoadText : MonoBehaviour
 
         if (story_chk)
         {
-            //各行の最初の文字の時に一度だけ処理
-            if (textCharNumber == 0 && textNumber < splitText1.Length + 1)
-            {
-                Debug.Log(textNumber);
-                Debug.Log(splitText1.Length);
-                code = splitText1[textNumber].Substring(splitText1[textNumber].Length - 4, 3);
-                loadText2 = loadText1.Replace(code, "");
-                splitText2 = loadText2.Split(char.Parse("\n"));
-            }
-
+           
             string code0 = splitText1[textNumber][textCharNumber].ToString();//@
             string code1 = splitText1[textNumber][textCharNumber + 1].ToString() + splitText1[textNumber][textCharNumber + 2].ToString();//@に続く2文字
             //textファイル、末尾の特殊コードは3文字分(特殊コードの文字数分)空白にする
@@ -200,10 +194,24 @@ public class LoadText : MonoBehaviour
                 Switch(code1);//特殊コード処理
                 textCharNumber += 3;//code1の文字数分足す(テキストを飛ばす)
                 return;
+               
 
-            　/*return句とbreak句の違い*/
+                /*return句とbreak句の違い*/
                 //breakの場合はbreakを囲っているwhile文やfor文の繰り返しが終了し、次の処理に行くが、
                 //returnの場合は、メソッドごと終了させる
+            }
+
+            //各行の最初の文字の時に一度だけ処理
+            if (textCharNumber == 0 && textNumber < splitText1.Length + 1)
+            {
+                code = splitText1[textNumber].Substring(splitText1[textNumber].Length - 4, 3);
+                loadText2 = loadText1.Replace(code, "");
+                splitText2 = loadText2.Split(char.Parse("\n"));
+                if (code0 != "@")
+                {
+                    backLog.content.GetComponentInChildren<Text>().text += splitText2[textNumber];
+                }
+               
             }
 
             if (textCharNumber != splitText2[textNumber].Length)//もしtext[textNumber]の文字列の文字が最後の文字じゃなければ
@@ -229,7 +237,6 @@ public class LoadText : MonoBehaviour
                         displayText = "";
                         textCharNumber = 0;//文字数リセット
                         textNumber = textNumber + 1;//次の行へ
-                        backLog.content.GetComponentInChildren<Text>().text += splitText2[textNumber];
                     }
                     else if (auto_chk)//Auto会話
                     {
@@ -252,6 +259,7 @@ public class LoadText : MonoBehaviour
                 }
             }
             dataText.text = displayText;
+       
         }
         
         //    //LinQ(リンク)　FirstOrDefaultメソッド
@@ -279,6 +287,8 @@ public class LoadText : MonoBehaviour
     //特殊コード処理関数
     void Switch(string code)
     {
+        string logtext = splitText2[textNumber].Replace("@" + code, "");
+        
         //code(特殊コード)によって処理を変化
         switch (code)
         {
@@ -288,36 +298,42 @@ public class LoadText : MonoBehaviour
                 Women("true");
                 Men("false");
                 textSE.PlayOneShot(t_se1);
+                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext;
                 break;
             case "1B"://笑顔(口開け)
                 women.sprite = WomenImage[1];
                 Women("true");
                 Men("false");
                 textSE.PlayOneShot(t_se1);
+                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext;
                 break;
             case "1C"://怒り・圧
                 women.sprite = WomenImage[2];
                 Women("true");
                 Men("false");
                 textSE.PlayOneShot(t_se1);
+                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext;
                 break;
             case "1D"://怒り・発言
                 women.sprite = WomenImage[3];
                 Women("true");
                 Men("false");
                 textSE.PlayOneShot(t_se1);
+                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext;
                 break;
             case "1E":///困り顔
                 women.sprite = WomenImage[4];
                 Women("true");
                 Men("false");
                 textSE.PlayOneShot(t_se1);
+                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext;
                 break;
             case "1F"://悲しい顔
                 women.sprite = WomenImage[5];
                 Women("true");
                 Men("false");
                 textSE.PlayOneShot(t_se1);
+                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext;
                 break;
 
                 //男性--------------------
@@ -326,36 +342,42 @@ public class LoadText : MonoBehaviour
                 Women("false");
                 Men("true");
                 textSE.PlayOneShot(t_se1);
+                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext;
                 break;
             case "2B"://困り顔(口開け)
                 men.sprite = MenImage[1];
                 Women("false");
                 Men("true");
                 textSE.PlayOneShot(t_se1);
+                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext;
                 break;
             case "2C"://ノーマル
                 men.sprite = MenImage[2];
                 Women("false");
                 Men("true");
                 textSE.PlayOneShot(t_se1);
+                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext;
                 break;
             case "2D"://目閉じ
                 men.sprite = MenImage[3];
                 Women("false");
                 Men("true");
                 textSE.PlayOneShot(t_se1);
+                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext;
                 break;
             case "2E"://笑顔(口閉じ)
                 men.sprite = MenImage[4];
                 Women("false");
                 Men("true");
                 textSE.PlayOneShot(t_se1);
+                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext;
                 break;
             case "2F"://笑顔(口開け)
                 men.sprite = MenImage[5];
                 Women("false");
                 Men("true");
                 textSE.PlayOneShot(t_se1);
+                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext;
                 break;
 
                 //背景----------------------
@@ -375,29 +397,37 @@ public class LoadText : MonoBehaviour
                 //効果音----------------------
             case "4A":
                 storySE.PlayOneShot(s_se1);
+                backLog.content.GetComponentInChildren<Text>().text += logtext;
                 break;
             case "4B":
                 storySE.PlayOneShot(s_se2);
+                backLog.content.GetComponentInChildren<Text>().text += logtext;
                 break;
             case "4C":
                 storySE.PlayOneShot(s_se3);
+                backLog.content.GetComponentInChildren<Text>().text += logtext;
                 break;
             case "4D":
                 storySE.PlayOneShot(s_se4);
+                backLog.content.GetComponentInChildren<Text>().text += logtext;
                 break;
             case "4E":
                 Denwa();
                 Invoke("Denwa", 2.5f);
                 Invoke("Denwa", 5f);
+                backLog.content.GetComponentInChildren<Text>().text += logtext;
                 break;
             case "4F":
                 storySE.PlayOneShot(s_se6);
+                backLog.content.GetComponentInChildren<Text>().text += logtext;
                 break;
             case "4G":
                 storySE.PlayOneShot(s_se7);
+                backLog.content.GetComponentInChildren<Text>().text += logtext;
                 break;
             case "4H":
                 storySE.PlayOneShot(s_se8);
+                backLog.content.GetComponentInChildren<Text>().text += logtext;
                 break;
 
                 //BGM----------------------
