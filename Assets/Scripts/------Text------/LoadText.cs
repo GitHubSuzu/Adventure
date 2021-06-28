@@ -91,6 +91,7 @@ public class LoadText : MonoBehaviour
     [SerializeField] private AudioClip s_bgm1;
 
     //StoryのSE用のAudioClip
+    [SerializeField] private AudioClip s_btn;
     [SerializeField] private AudioClip s_click;
     [SerializeField] private AudioClip s_se1;
     [SerializeField] private AudioClip s_se2;
@@ -124,8 +125,9 @@ public class LoadText : MonoBehaviour
     [SerializeField]
     private ScrollRect backLog;
 
-    private string m_name = "坂本　：　";
+    private string m_name = "坂本　　：　";
     private string w_name = "西園寺　：　";
+
 
     void Start()
     {
@@ -190,7 +192,9 @@ public class LoadText : MonoBehaviour
             //textファイル、末尾の特殊コードは3文字分(特殊コードの文字数分)空白にする
             if (code0 == "@")
             {
+
                 Debug.Log(code1);
+                splitText2[textNumber].Replace("@" + code1, "");
                 Switch(code1);//特殊コード処理
                 textCharNumber += 3;//code1の文字数分足す(テキストを飛ばす)
                 return;
@@ -209,7 +213,7 @@ public class LoadText : MonoBehaviour
                 splitText2 = loadText2.Split(char.Parse("\n"));
                 if (code0 != "@")
                 {
-                    backLog.content.GetComponentInChildren<Text>().text += splitText2[textNumber];
+                    backLog.content.GetComponentInChildren<Text>().text += splitText2[textNumber] + "\n";
                 }
                
             }
@@ -298,42 +302,42 @@ public class LoadText : MonoBehaviour
                 Women("true");
                 Men("false");
                 textSE.PlayOneShot(t_se1);
-                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext;
+                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext + "\n";
                 break;
             case "1B"://笑顔(口開け)
                 women.sprite = WomenImage[1];
                 Women("true");
                 Men("false");
                 textSE.PlayOneShot(t_se1);
-                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext;
+                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext + "\n";
                 break;
             case "1C"://怒り・圧
                 women.sprite = WomenImage[2];
                 Women("true");
                 Men("false");
                 textSE.PlayOneShot(t_se1);
-                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext;
+                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext + "\n";
                 break;
             case "1D"://怒り・発言
                 women.sprite = WomenImage[3];
                 Women("true");
                 Men("false");
                 textSE.PlayOneShot(t_se1);
-                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext;
+                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext + "\n";
                 break;
             case "1E":///困り顔
                 women.sprite = WomenImage[4];
                 Women("true");
                 Men("false");
                 textSE.PlayOneShot(t_se1);
-                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext;
+                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext + "\n";
                 break;
             case "1F"://悲しい顔
                 women.sprite = WomenImage[5];
                 Women("true");
                 Men("false");
                 textSE.PlayOneShot(t_se1);
-                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext;
+                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext + "\n";
                 break;
 
                 //男性--------------------
@@ -342,42 +346,42 @@ public class LoadText : MonoBehaviour
                 Women("false");
                 Men("true");
                 textSE.PlayOneShot(t_se1);
-                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext;
+                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext + "\n";
                 break;
             case "2B"://困り顔(口開け)
                 men.sprite = MenImage[1];
                 Women("false");
                 Men("true");
                 textSE.PlayOneShot(t_se1);
-                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext;
+                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext + "\n";
                 break;
             case "2C"://ノーマル
                 men.sprite = MenImage[2];
                 Women("false");
                 Men("true");
                 textSE.PlayOneShot(t_se1);
-                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext;
+                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext + "\n";
                 break;
             case "2D"://目閉じ
                 men.sprite = MenImage[3];
                 Women("false");
                 Men("true");
                 textSE.PlayOneShot(t_se1);
-                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext;
+                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext + "\n";
                 break;
             case "2E"://笑顔(口閉じ)
                 men.sprite = MenImage[4];
                 Women("false");
                 Men("true");
                 textSE.PlayOneShot(t_se1);
-                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext;
+                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext + "\n";
                 break;
             case "2F"://笑顔(口開け)
                 men.sprite = MenImage[5];
                 Women("false");
                 Men("true");
                 textSE.PlayOneShot(t_se1);
-                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext;
+                backLog.content.GetComponentInChildren<Text>().text += m_name + logtext + "\n";
                 break;
 
                 //背景----------------------
@@ -397,37 +401,37 @@ public class LoadText : MonoBehaviour
                 //効果音----------------------
             case "4A":
                 storySE.PlayOneShot(s_se1);
-                backLog.content.GetComponentInChildren<Text>().text += logtext;
+                backLog.content.GetComponentInChildren<Text>().text += w_name + logtext + "\n";
                 break;
             case "4B":
                 storySE.PlayOneShot(s_se2);
-                backLog.content.GetComponentInChildren<Text>().text += logtext;
+                backLog.content.GetComponentInChildren<Text>().text += logtext + "\n";
                 break;
             case "4C":
                 storySE.PlayOneShot(s_se3);
-                backLog.content.GetComponentInChildren<Text>().text += logtext;
+                backLog.content.GetComponentInChildren<Text>().text += logtext + "\n";
                 break;
             case "4D":
                 storySE.PlayOneShot(s_se4);
-                backLog.content.GetComponentInChildren<Text>().text += logtext;
+                backLog.content.GetComponentInChildren<Text>().text += logtext + "\n";
                 break;
             case "4E":
                 Denwa();
                 Invoke("Denwa", 2.5f);
                 Invoke("Denwa", 5f);
-                backLog.content.GetComponentInChildren<Text>().text += logtext;
+                backLog.content.GetComponentInChildren<Text>().text += logtext + "\n";
                 break;
             case "4F":
                 storySE.PlayOneShot(s_se6);
-                backLog.content.GetComponentInChildren<Text>().text += logtext;
+                backLog.content.GetComponentInChildren<Text>().text += logtext + "\n";
                 break;
             case "4G":
                 storySE.PlayOneShot(s_se7);
-                backLog.content.GetComponentInChildren<Text>().text += logtext;
+                backLog.content.GetComponentInChildren<Text>().text += logtext + "\n";
                 break;
             case "4H":
                 storySE.PlayOneShot(s_se8);
-                backLog.content.GetComponentInChildren<Text>().text += logtext;
+                backLog.content.GetComponentInChildren<Text>().text += logtext + "\n";
                 break;
 
                 //BGM----------------------
@@ -526,6 +530,11 @@ public class LoadText : MonoBehaviour
             menu.SetActive(true);
             story_chk = false;
         }
+    }
+
+    public void Click()
+    {
+        storySE.PlayOneShot(s_btn);
     }
 
     void Men(string answer){
