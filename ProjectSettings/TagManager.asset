@@ -69,6 +69,7 @@ TagManager:
   - Bucket_2
   - Getabako
   - TileB
+  - GateWall
   layers:
   - Default
   - TransparentFX

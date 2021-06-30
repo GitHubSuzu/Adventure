@@ -118,7 +118,8 @@ public class IventText : MonoBehaviour
         //テキスト番号の初期化
         textNum1 = 0;
 
-        gateWall = GameObject.Find("GateWall");
+        
+        gateWall = GameObject.FindGameObjectWithTag("GateWall");//処理が軽い
         gateWall.SetActive(false);
 
         //男性の名前

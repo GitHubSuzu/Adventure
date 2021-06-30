@@ -61,7 +61,8 @@ public class WindowText : MonoBehaviour
         canvas_pass.SetActive(false);
         canvas_flick.SetActive(false);
         canvas_window.SetActive(false);
-        gate = GameObject.Find("Gate");
+        gate = GameObject.FindGameObjectWithTag("Main_Gate");//処理が軽い
+        //gate = GameObject.Find("Gate");
         gate.SetActive(false);
         textNum1 = 0;
     }

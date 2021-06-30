@@ -25102,7 +25102,7 @@ GameObject:
   - component: {fileID: 895368780}
   m_Layer: 0
   m_Name: GateWall
-  m_TagString: Untagged
+  m_TagString: GateWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
